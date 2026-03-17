@@ -3,8 +3,8 @@
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev",
-    "lint": "ultracite check .",
-    "format": "ultracite fix ."
+    "check": "ultracite check",
+    "fix": "ultracite fix"
   },
   "devDependencies": {
     "@biomejs/biome": "2.4.7",
