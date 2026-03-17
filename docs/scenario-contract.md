@@ -2,14 +2,14 @@
 
 ## Purpose
 
-The scenario contract is the source of truth for Awware. The overlay, runtime, persistence layer, and future preview or test integrations must all consume the same scenario model.
+The scenario contract is the source of truth for gc. The overlay, runtime, persistence layer, and future preview or test integrations must all consume the same scenario model.
 
 ## Scenario Shape
 
 Each scenario is a serializable object with stable fields.
 
 ```ts
-type AwwareScenario = {
+type GcScenario = {
   id: string
   label: string
   description?: string
@@ -22,7 +22,7 @@ type AwwareScenario = {
     session?: Record<string, unknown> | null
   }
   flags?: Record<string, boolean | string | number | null>
-  mocks?: Array<string | AwwareMockDefinition>
+  mocks?: Array<string | GcMockDefinition>
   route?: {
     initialPath?: string
     params?: Record<string, string>
@@ -32,7 +32,7 @@ type AwwareScenario = {
   metadata?: Record<string, string | number | boolean | null>
 }
 
-type AwwareMockDefinition = {
+type GcMockDefinition = {
   id?: string
   url: string | RegExp
   method?: string
@@ -98,7 +98,7 @@ Examples:
 Runtime state must resolve in this order:
 
 1. app defaults
-2. Awware config defaults
+2. gc config defaults
 3. persisted user state from the previous session
 4. selected scenario
 5. temporary manual changes made through the overlay
@@ -111,11 +111,11 @@ Persist only local, serializable values.
 
 Initial storage keys:
 
-- `awware_active_scenario`
-- `awware_identity`
-- `awware_flags`
-- `awware_mocks`
-- `awware_seeded_state`
+- `gc_active_scenario`
+- `gc_identity`
+- `gc_flags`
+- `gc_mocks`
+- `gc_seeded_state`
 
 Persisted state must never be treated as a source of truth outside development.
 
@@ -127,7 +127,7 @@ The runtime must support two reset paths:
   - reapply the selected scenario from scratch
   - clear temporary toggles and transient overrides
 - `clear all persisted state`
-  - remove Awware storage keys
+  - remove gc storage keys
   - detach active mocks
   - return adapters to baseline
 

@@ -1,5 +1,5 @@
 {
-  "name": "web",
+  "name": "@gc/web",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -7,14 +7,14 @@
     "dev": "vite --clearScreen false",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "lint": "eslint \"src/**/*.ts\""
+    "lint": "eslint --resolve-plugins-relative-to ../../packages/eslint-config \"src/**/*.ts\""
   },
   "dependencies": {
-    "@repo/ui": "*"
+    "@gc/ui": "*"
   },
   "devDependencies": {
-    "@repo/eslint-config": "*",
-    "@repo/typescript-config": "*",
+    "@gc/eslint-config": "*",
+    "@gc/typescript-config": "*",
     "eslint": "^8.57.0",
     "typescript": "5.5.4",
     "vite": "^5.1.4"

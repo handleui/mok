@@ -1,12 +1,12 @@
 # Compatibility Matrix
 
-This matrix defines what Awware can claim today and what must remain roadmap-only until proven.
+This matrix defines what gc can claim today and what must remain roadmap-only until proven.
 
 ## Support Labels
 
 - `Guaranteed` means first-party, documented, example-backed, and acceptance-tested.
 - `Supported with official adapter` means a first-party adapter exists and has acceptance coverage.
-- `Manual fallback` means a documented path exists, but Awware cannot guarantee automatic integration behavior.
+- `Manual fallback` means a documented path exists, but gc cannot guarantee automatic integration behavior.
 - `Out of scope` means not supported in the current phase.
 
 ## Matrix

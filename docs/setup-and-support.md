@@ -2,23 +2,23 @@
 
 ## Philosophy
 
-Awware aims for low setup, not fake zero setup. The baseline integration should be small and explicit so the resulting behavior is predictable.
+gc aims for low setup, not fake zero setup. The baseline integration should be small and explicit so the resulting behavior is predictable.
 
 ## Intended Installation Story
 
 The primary installation shape is:
 
 ```ts
-import "awware/dev"
+import "gc/dev"
 ```
 
 Apps that need richer behavior will also register config and adapters:
 
 ```ts
-import "awware/dev"
-import { defineAwware } from "awware"
+import "gc/dev"
+import { defineGc } from "gc"
 
-defineAwware({
+defineGc({
   scenarios: [],
   adapters: [],
 })
@@ -68,7 +68,7 @@ Non-guarantees:
 
 Purpose:
 
-- bridge Awware scenarios to actual app/provider boundaries
+- bridge gc scenarios to actual app/provider boundaries
 
 Guarantees:
 
@@ -93,7 +93,7 @@ The compatibility matrix is the source of truth for those labels.
 
 ## Troubleshooting Expectations
 
-If a setup fails, Awware should guide diagnosis through explicit status:
+If a setup fails, gc should guide diagnosis through explicit status:
 
 - adapter missing
 - adapter installed but unavailable

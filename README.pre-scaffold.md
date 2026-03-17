@@ -1,6 +1,6 @@
-# Awware
+# gc
 
-Awware is a dev-only scenario orchestration runtime for exploring application UI states without depending on real backend operations.
+gc is a dev-only scenario orchestration runtime for exploring application UI states without depending on real backend operations.
 
 This repository is intentionally documentation-first. The initial focus is to lock product scope, support guarantees, contracts, and roadmap before scaffolding runtime code.
 

@@ -2,9 +2,9 @@
 
 ## Purpose
 
-Adapters are the compatibility model for Awware. They bridge the gap between generic scenario state and real application boundaries.
+Adapters are the compatibility model for gc. They bridge the gap between generic scenario state and real application boundaries.
 
-Without adapters, Awware can only offer a limited local runtime. With adapters, it can drive real auth, flags, routing, and transport behavior in a documented way.
+Without adapters, gc can only offer a limited local runtime. With adapters, it can drive real auth, flags, routing, and transport behavior in a documented way.
 
 ## Global Adapter Requirements
 
@@ -20,7 +20,7 @@ Every adapter must:
 ## Common Shape
 
 ```ts
-type AwwareAdapter = {
+type GcAdapter = {
   name: string
   kind: "auth" | "flags" | "router" | "transport"
   isAvailable(): boolean
@@ -31,7 +31,7 @@ type AwwareAdapter = {
     message?: string
   }
   setup?(): void | Promise<void>
-  applyScenario?(scenario: AwwareScenario): void | Promise<void>
+  applyScenario?(scenario: GcScenario): void | Promise<void>
   reset?(): void | Promise<void>
   teardown?(): void | Promise<void>
 }
@@ -74,7 +74,7 @@ Supported strategies:
 
 ## Router Adapter
 
-A router adapter lets Awware navigate and, where possible, enumerate routes.
+A router adapter lets gc navigate and, where possible, enumerate routes.
 
 Expected capabilities:
 
