@@ -1,10 +1,16 @@
-import { Header } from "@gc/ui/header";
+import { Counter } from "@mok/ui/counter";
+import { Header } from "@mok/ui/header";
+import { setupCounter } from "@mok/ui/setup-counter";
 import "./style.css";
 import typescriptLogo from "/typescript.svg";
-import { Counter } from "@gc/ui/counter";
-import { setupCounter } from "@gc/ui/setup-counter";
 
-document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
+const app = document.querySelector<HTMLDivElement>("#app");
+
+if (!app) {
+  throw new Error('Missing root element "#app".');
+}
+
+app.innerHTML = `
   <div>
     <a href="https://vitejs.dev" target="_blank">
       <img src="/vite.svg" class="logo" alt="Vite logo" />
@@ -12,11 +18,17 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
     <a href="https://www.typescriptlang.org/" target="_blank">
       <img src="${typescriptLogo}" class="logo vanilla" alt="TypeScript logo" />
     </a>
-    ${Header({ title: "gc" })}
+    ${Header({ title: "mok" })}
     <div class="card">
       ${Counter()}
     </div>
   </div>
 `;
 
-setupCounter(document.querySelector<HTMLButtonElement>("#counter")!);
+const counter = document.querySelector<HTMLButtonElement>("#counter");
+
+if (!counter) {
+  throw new Error('Missing counter element "#counter".');
+}
+
+setupCounter(counter);

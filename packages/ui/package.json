@@ -1,5 +1,5 @@
 {
-  "name": "@gc/ui",
+  "name": "@mok/ui",
   "version": "0.0.0",
   "exports": {
     "./counter": "./components/counter.ts",
@@ -7,13 +7,8 @@
     "./setup-counter": "./utils/counter.ts"
   },
   "license": "MIT",
-  "scripts": {
-    "lint": "eslint --resolve-plugins-relative-to ../eslint-config \"**/*.ts\""
-  },
   "devDependencies": {
-    "@gc/eslint-config": "*",
-    "@gc/typescript-config": "*",
-    "eslint": "^8.57.0",
+    "@mok/typescript-config": "*",
     "typescript": "5.5.4"
   }
 }

@@ -2,23 +2,23 @@
 
 ## Philosophy
 
-gc aims for low setup, not fake zero setup. The baseline integration should be small and explicit so the resulting behavior is predictable.
+mok aims for low setup, not fake zero setup. The baseline integration should be small and explicit so the resulting behavior is predictable.
 
 ## Intended Installation Story
 
 The primary installation shape is:
 
 ```ts
-import "gc/dev"
+import "mok/dev"
 ```
 
 Apps that need richer behavior will also register config and adapters:
 
 ```ts
-import "gc/dev"
-import { defineGc } from "gc"
+import "mok/dev"
+import { defineMok } from "mok"
 
-defineGc({
+defineMok({
   scenarios: [],
   adapters: [],
 })
@@ -68,7 +68,7 @@ Non-guarantees:
 
 Purpose:
 
-- bridge gc scenarios to actual app/provider boundaries
+- bridge mok scenarios to actual app/provider boundaries
 
 Guarantees:
 
@@ -93,7 +93,7 @@ The compatibility matrix is the source of truth for those labels.
 
 ## Troubleshooting Expectations
 
-If a setup fails, gc should guide diagnosis through explicit status:
+If a setup fails, mok should guide diagnosis through explicit status:
 
 - adapter missing
 - adapter installed but unavailable

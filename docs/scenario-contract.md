@@ -2,14 +2,14 @@
 
 ## Purpose
 
-The scenario contract is the source of truth for gc. The overlay, runtime, persistence layer, and future preview or test integrations must all consume the same scenario model.
+The scenario contract is the source of truth for mok. The overlay, runtime, persistence layer, and future preview or test integrations must all consume the same scenario model.
 
 ## Scenario Shape
 
 Each scenario is a serializable object with stable fields.
 
 ```ts
-type GcScenario = {
+type MokScenario = {
   id: string
   label: string
   description?: string
@@ -22,7 +22,7 @@ type GcScenario = {
     session?: Record<string, unknown> | null
   }
   flags?: Record<string, boolean | string | number | null>
-  mocks?: Array<string | GcMockDefinition>
+  mocks?: Array<string | MokMockDefinition>
   route?: {
     initialPath?: string
     params?: Record<string, string>
@@ -32,7 +32,7 @@ type GcScenario = {
   metadata?: Record<string, string | number | boolean | null>
 }
 
-type GcMockDefinition = {
+type MokMockDefinition = {
   id?: string
   url: string | RegExp
   method?: string
@@ -98,7 +98,7 @@ Examples:
 Runtime state must resolve in this order:
 
 1. app defaults
-2. gc config defaults
+2. mok config defaults
 3. persisted user state from the previous session
 4. selected scenario
 5. temporary manual changes made through the overlay
@@ -111,11 +111,11 @@ Persist only local, serializable values.
 
 Initial storage keys:
 
-- `gc_active_scenario`
-- `gc_identity`
-- `gc_flags`
-- `gc_mocks`
-- `gc_seeded_state`
+- `mok_active_scenario`
+- `mok_identity`
+- `mok_flags`
+- `mok_mocks`
+- `mok_seeded_state`
 
 Persisted state must never be treated as a source of truth outside development.
 
@@ -127,7 +127,7 @@ The runtime must support two reset paths:
   - reapply the selected scenario from scratch
   - clear temporary toggles and transient overrides
 - `clear all persisted state`
-  - remove gc storage keys
+  - remove mok storage keys
   - detach active mocks
   - return adapters to baseline
 

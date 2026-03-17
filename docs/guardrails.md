@@ -2,14 +2,14 @@
 
 ## Purpose
 
-These guardrails exist to keep gc honest, safe, and implementable.
+These guardrails exist to keep mok honest, safe, and implementable.
 
 ## Runtime Guardrails
 
-- gc must run only in development.
-- gc must execute only in the browser for the first release.
-- gc must not send telemetry or outbound product analytics.
-- gc state must remain local to the developer machine.
+- mok must run only in development.
+- mok must execute only in the browser for the first release.
+- mok must not send telemetry or outbound product analytics.
+- mok state must remain local to the developer machine.
 - The overlay must load lazily so the control surface does not dominate the core runtime cost.
 
 ## Product Guardrails
@@ -24,8 +24,8 @@ These guardrails exist to keep gc honest, safe, and implementable.
 
 - No server-auth impersonation in v1.
 - No bypass claims for middleware, server actions, or backend ACLs.
-- No storage of secrets or credentials in gc persistence.
-- No production code path should execute gc runtime behavior.
+- No storage of secrets or credentials in mok persistence.
+- No production code path should execute mok runtime behavior.
 
 ## Support Guardrails
 

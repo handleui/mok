@@ -2,7 +2,7 @@
 
 ## Thesis
 
-gc is a dev-only scenario orchestration runtime for client-side app exploration. It lets developers explore realistic UI states without depending on live backend operations by combining a scenario contract, provider-aware adapters, local persistence, and a minimal overlay.
+mok is a dev-only scenario orchestration runtime for client-side app exploration. It lets developers explore realistic UI states without depending on live backend operations by combining a scenario contract, provider-aware adapters, local persistence, and a minimal overlay.
 
 ## Problem
 
@@ -18,7 +18,7 @@ In most apps, these states are controlled by backend responses, auth providers, 
 
 ## Product Position
 
-gc is not a general-purpose browser hack. It is an app-aware development runtime with explicit contracts:
+mok is not a general-purpose browser hack. It is an app-aware development runtime with explicit contracts:
 
 - scenarios define the target state
 - adapters bridge real app boundaries such as auth, flags, routing, and transport
@@ -26,7 +26,7 @@ gc is not a general-purpose browser hack. It is an app-aware development runtime
 
 ## Core Outcomes
 
-A successful gc setup should let a developer:
+A successful mok setup should let a developer:
 
 1. install a dev-only runtime
 2. register scenarios and adapters
@@ -61,7 +61,7 @@ Anything short of that must be labeled as either manual fallback or out of scope
 
 ## What "No Business-Logic Rewrites" Means
 
-gc aims to avoid feature rewrites and state-management refactors. That does not mean zero setup.
+mok aims to avoid feature rewrites and state-management refactors. That does not mean zero setup.
 
 Allowed setup:
 
@@ -90,7 +90,7 @@ The first implementation slice is intentionally narrow:
 
 The first coded slice is successful when a developer can:
 
-1. install gc in a Vite + React app
+1. install mok in a Vite + React app
 2. mount it in development
 3. load a scenario
 4. navigate through the router adapter

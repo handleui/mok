@@ -1,13 +1,13 @@
-# gc workspace
+# mok workspace
 
-This repository is a Turborepo workspace for gc.
+This repository is a Turborepo workspace for mok.
+The production domain is `trymok.com`.
 
 ## Packages
 
-- `@gc/web`: the main web app
-- `@gc/ui`: shared UI components and utilities
-- `@gc/eslint-config`: shared ESLint configuration
-- `@gc/typescript-config`: shared TypeScript configuration
+- `@mok/web`: the main web app
+- `@mok/ui`: shared UI components and utilities
+- `@mok/typescript-config`: shared TypeScript configuration
 
 ## Commands
 

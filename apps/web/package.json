@@ -1,21 +1,18 @@
 {
-  "name": "@gc/web",
+  "name": "@mok/web",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite --clearScreen false",
     "build": "tsc && vite build",
-    "preview": "vite preview",
-    "lint": "eslint --resolve-plugins-relative-to ../../packages/eslint-config \"src/**/*.ts\""
+    "preview": "vite preview"
   },
   "dependencies": {
-    "@gc/ui": "*"
+    "@mok/ui": "*"
   },
   "devDependencies": {
-    "@gc/eslint-config": "*",
-    "@gc/typescript-config": "*",
-    "eslint": "^8.57.0",
+    "@mok/typescript-config": "*",
     "typescript": "5.5.4",
     "vite": "^5.1.4"
   }
