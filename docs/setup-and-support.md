@@ -2,21 +2,21 @@
 
 ## Philosophy
 
-mok aims for low setup, not fake zero setup. The baseline integration should be small and explicit so the resulting behavior is predictable.
+mok aims for low setup, not fake zero setup. The baseline integration should be small and explicit so the resulting behavior is predictable. The default network posture is live backend passthrough with selective overrides, not blanket request mocking.
 
 ## Intended Installation Story
 
 The primary installation shape is:
 
 ```ts
-import "mok/dev"
+import "@mok/mok/dev"
 ```
 
 Apps that need richer behavior will also register config and adapters:
 
 ```ts
-import "mok/dev"
-import { defineMok } from "mok"
+import "@mok/mok/dev"
+import { defineMok } from "@mok/mok"
 
 defineMok({
   scenarios: [],
@@ -58,7 +58,7 @@ Guarantees:
 
 - deterministic scenario switching
 - manual route navigation targets
-- deterministic transport mocks on supported transports
+- deterministic transport overrides on supported transports with passthrough by default
 
 Non-guarantees:
 
@@ -75,6 +75,8 @@ Guarantees:
 - behavior defined by the adapter contract
 - support visibility in the overlay/runtime
 - higher-fidelity auth, flags, and routing integration
+- TanStack Router integration through the router instance adapter
+- route-manifest fallback when route explorer support is not stable enough for automatic discovery
 
 Non-guarantees:
 
@@ -100,6 +102,7 @@ If a setup fails, mok should guide diagnosis through explicit status:
 - scenario field unsupported by current adapters
 - route listing unavailable, manual registration required
 - transport class unsupported
+- partial support where the backend or provider boundary remains real
 
 ## Example Setup Targets
 
@@ -107,12 +110,14 @@ The first documentation-backed setup targets are:
 
 - Vite + React
 - TanStack Router adapter
-- browser `fetch` mocking
+- browser `fetch` passthrough with selective mocking
 - generic client auth/session simulation
 - local or OpenFeature-style flags
+- `apps/demo` as the first official example app
 
 ## Setup Boundaries
 
 - Next.js requires a client-only mount path when it enters implementation.
 - Server-only state is not part of the first release.
 - Real auth providers are contract-first until an official adapter exists.
+- AgentMail or other email/inbox integrations are later-phase additions, not core v1 setup.

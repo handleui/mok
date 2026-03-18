@@ -1,0 +1,17 @@
+{
+  "name": "@mok/mok",
+  "version": "0.1.0",
+  "type": "module",
+  "exports": {
+    ".": "./src/runtime.ts",
+    "./dev": "./src/dev.ts",
+    "./types": "./src/types.ts"
+  },
+  "dependencies": {
+    "@mok/mok-overlay": "*"
+  },
+  "devDependencies": {
+    "@mok/typescript-config": "*",
+    "typescript": "5.5.4"
+  }
+}

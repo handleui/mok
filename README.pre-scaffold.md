@@ -1,8 +1,8 @@
 # mok
 
-mok is a dev-only scenario orchestration runtime for exploring application UI states without depending on real backend operations.
+mok is a dev-only scenario orchestration runtime for exploring application UI states with a hybrid model: real backend passthrough by default, selective deterministic mocks where needed, and explicit support boundaries for unsupported behavior.
 
-This repository is intentionally documentation-first. The initial focus is to lock product scope, support guarantees, contracts, and roadmap before scaffolding runtime code.
+This repository is intentionally contract-first. The initial focus is to lock product scope, support guarantees, contracts, and roadmap before and while scaffolding runtime code. The first official example target is `apps/demo`.
 
 ## Docs
 

@@ -4,7 +4,7 @@
 
 Goal:
 
-- lock the product definition, support boundaries, scenario contract, adapter contracts, and roadmap criteria before coding
+- lock the product definition, support boundaries, scenario contract, adapter contracts, and roadmap criteria before and during coding
 
 Deliverables:
 
@@ -20,30 +20,34 @@ Exit criteria:
 - first implementation slice is unambiguous
 - unsupported claims have been removed from product language
 - support labels are consistent across all docs
+- hybrid passthrough-by-default behavior is documented clearly
 
-## Phase 1: Narrow Runtime Slice
+## Phase 1: Core Runtime And Demo
 
 Goal:
 
-- prove the scenario-first architecture on one reliable stack
+- prove the hybrid scenario runtime on one reliable stack and one official demo app
 
 Scope:
 
 - Vite + React
 - TanStack Router adapter
-- browser `fetch` transport adapter
+- browser `fetch` transport adapter with passthrough by default
 - scenario persistence and reset
 - local or OpenFeature-style flags
 - generic client auth/session adapter shape
 - minimal overlay
+- `apps/demo` as the first official support target
 
 Exit criteria:
 
-- installation path is documented and works in an example app
+- installation path is documented and works in `apps/demo`
 - scenario switching is deterministic
 - route navigation works through the router adapter
-- mocks are deterministic and reset correctly
+- transport overrides are deterministic and reset correctly
 - unsupported capabilities surface clearly
+- real backend passthrough remains the default unless a scenario overrides it
+- overlay status distinguishes real, simulated, mocked, and partial behavior
 
 ## Phase 2: Adapter Expansion
 
@@ -64,6 +68,7 @@ Admission criteria for each target:
 - example app
 - acceptance cases
 - setup guide
+- the target cannot be promoted to supported without example-backed proof
 
 ## Phase 3: Broader Tooling Reuse
 
@@ -102,3 +107,4 @@ Constraint:
 - roadmap items are not support commitments
 - supported claims require documentation, examples, and acceptance coverage
 - broad framework expansion cannot outrun the scenario and adapter model
+- demo and product runtime remain separate concerns in the monorepo

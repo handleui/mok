@@ -75,6 +75,7 @@ Mocks define transport-level behavior for supported requests.
 - named mocks are referenced by string
 - inline mocks are stored as objects
 - multiple mocks may be active under one scenario
+- unmatched requests pass through unless a scenario or adapter explicitly intercepts them
 
 ### Route
 
@@ -104,6 +105,13 @@ Runtime state must resolve in this order:
 5. temporary manual changes made through the overlay
 
 This order keeps scenarios reproducible while still allowing temporary exploration.
+
+Runtime mode should also be visible to the user as one of:
+
+- `real` when the app or backend is handling the behavior
+- `simulated` when mok applies local client state
+- `mocked` when mok deterministically overrides a request or value
+- `partial` when a scenario cannot fully control the relevant boundary
 
 ## Persistence Rules
 
@@ -137,6 +145,7 @@ The runtime must support two reset paths:
 - scenarios must not depend on application internals to remain valid
 - unsupported fields must fail visibly, not silently
 - the overlay must display unsupported scenario capabilities when adapters are missing
+- transport overrides should be explicit and deterministic; live passthrough remains the default
 
 ## Future Consumers
 

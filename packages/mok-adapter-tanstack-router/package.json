@@ -1,0 +1,15 @@
+{
+  "name": "@mok/mok-adapter-tanstack-router",
+  "version": "0.1.0",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "dependencies": {
+    "@mok/mok": "*"
+  },
+  "devDependencies": {
+    "@mok/typescript-config": "*",
+    "typescript": "5.5.4"
+  }
+}

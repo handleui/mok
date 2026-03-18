@@ -6,6 +6,8 @@ Adapters are the compatibility model for mok. They bridge the gap between generi
 
 Without adapters, mok can only offer a limited local runtime. With adapters, it can drive real auth, flags, routing, and transport behavior in a documented way.
 
+Adapters should prefer honest partial support over hidden emulation. If a boundary can only be influenced locally, it must report that clearly.
+
 ## Global Adapter Requirements
 
 Every adapter must:
@@ -54,6 +56,7 @@ Auth v1 boundary:
 - `/me` or equivalent transport mocking where applicable
 - no server session forgery
 - no middleware bypass guarantee
+- unsupported server-enforced flows must surface as partial support
 
 ## Flag Adapter
 
@@ -88,6 +91,8 @@ Router boundary:
 - no universal route discovery guarantee
 - adapter-backed listing where stable route definitions exist
 - manual route registration is a first-class fallback
+- TanStack Router should use the router instance directly as the primary integration point
+- route-manifest fallback is valid when route-tree introspection is not stable enough for support
 
 ## Transport Adapter
 
@@ -96,13 +101,15 @@ A transport adapter owns supported network interception.
 Expected capabilities:
 
 - register deterministic mocks
-- pass through unmatched requests
+- pass through unmatched requests by default
 - reset all active mocks
 - report unsupported traffic classes
 
 Initial support:
 
 - browser `fetch`
+
+Transport adapter behavior should be explicit about what is mocked versus what is still real. The default posture is passthrough, not full virtualization.
 
 Explicitly not guaranteed in v1:
 
@@ -132,6 +139,7 @@ Required behavior:
 - surface status in the overlay/runtime
 - identify missing dependencies or unsupported usage
 - never pretend a scenario was fully applied when it was only partially applied
+- distinguish real, simulated, mocked, and partial states in the status model
 
 ## Support Tiers
 

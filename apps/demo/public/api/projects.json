@@ -1,0 +1,19 @@
+{
+  "projects": [
+    {
+      "id": "project_atlas",
+      "name": "Atlas",
+      "status": "healthy"
+    },
+    {
+      "id": "project_pulse",
+      "name": "Pulse",
+      "status": "shipping"
+    },
+    {
+      "id": "project_zenith",
+      "name": "Zenith",
+      "status": "monitoring"
+    }
+  ]
+}

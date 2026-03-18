@@ -1,0 +1,27 @@
+{
+  "name": "@mok/demo",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --clearScreen false",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@tanstack/react-query": "^5.90.2",
+    "@mok/mok-adapter-tanstack-router": "*",
+    "@mok/mok": "*",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "@tanstack/react-router": "^1.114.3"
+  },
+  "devDependencies": {
+    "@mok/typescript-config": "*",
+    "@types/react": "^18.3.11",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "typescript": "5.5.4",
+    "vite": "^5.4.11"
+  }
+}

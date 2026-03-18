@@ -1,7 +1,8 @@
 {
   "extends": "@mok/typescript-config/vite.json",
   "include": ["src"],
+  "exclude": ["node_modules"],
   "compilerOptions": {
-    "strictNullChecks": true
+    "jsx": "react-jsx"
   }
 }

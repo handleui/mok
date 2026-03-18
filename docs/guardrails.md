@@ -19,6 +19,7 @@ These guardrails exist to keep mok honest, safe, and implementable.
 - Unsupported capabilities must fail visibly.
 - The product must not rely on undocumented framework or provider internals as a supported promise.
 - The product must not claim compatibility just because the overlay can render.
+- The product must clearly distinguish real, simulated, mocked, and partial behavior.
 
 ## Security Guardrails
 
@@ -33,6 +34,7 @@ These guardrails exist to keep mok honest, safe, and implementable.
 - Manual fallback is acceptable, but it must be documented as fallback.
 - Community adapters cannot upgrade a target to supported without first-party validation.
 - Route exploration must be adapter-backed or manifest-backed, never based on undocumented universal introspection promises.
+- Transport mocking must default to passthrough, with explicit deterministic overrides.
 
 ## Performance Guardrails
 
@@ -46,6 +48,7 @@ These guardrails exist to keep mok honest, safe, and implementable.
 - The overlay must clearly show unsupported adapters or partially applied capabilities.
 - Reset actions must be explicit and easy to understand.
 - Temporary manual toggles must not be confused with persisted scenario defaults.
+- The overlay must expose when behavior is real, simulated, mocked, or partial.
 
 ## Release Guardrails
 
