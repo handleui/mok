@@ -2,9 +2,11 @@
   "private": true,
   "scripts": {
     "build": "turbo run build",
+    "check": "ultracite check .",
     "dev": "turbo run dev",
-    "check": "ultracite check",
-    "fix": "ultracite fix"
+    "fix": "ultracite fix .",
+    "format": "bun run fix",
+    "lint": "bun run check"
   },
   "devDependencies": {
     "@biomejs/biome": "2.4.7",
